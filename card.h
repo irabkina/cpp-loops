@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <random>
 #include <vector>
+#include <unistd.h>
 using namespace std;
 
 std::random_device rd;
@@ -36,7 +37,7 @@ class Card{
     Card(string s, string r){
         suit = s;
         rank = r;
-        value = distance(ranks.begin(), find(ranks.begin(), ranks.end(), r));
+        value = distance(ranks.begin(), find(ranks.begin(), ranks.end(), r)) + 1;
     }
     
 };
